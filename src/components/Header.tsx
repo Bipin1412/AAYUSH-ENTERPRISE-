@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { company } from "@/data/brochure";
+import logo from "@/assets/logo-aayush.webp";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -22,15 +22,11 @@ const Header = () => {
     <header className="sticky top-0 z-40 w-full border-b-2 border-secondary bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
-          <div className="flex h-11 w-11 items-center justify-center bg-primary text-primary-foreground border-2 border-secondary group-hover:rotate-3 transition-transform">
-            <ShieldCheck className="h-6 w-6" strokeWidth={2.5} />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-xl tracking-wide">{company.name.split(" ")[0]}</div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground -mt-1">
-              {company.tagline}
-            </div>
-          </div>
+          <img
+            src={logo}
+            alt="Aayush Enterprises"
+            className="h-11 w-auto max-w-[220px] object-contain transition-transform group-hover:scale-[1.02] sm:h-12 md:h-14"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
