@@ -24,7 +24,7 @@ const testimonials = [
 const faqs = [
   { q: "When was Aayush Enterprises established?", a: "The company was established in 2017 and is headquartered in Aurangabad, Maharashtra." },
   { q: "What are the main business verticals?", a: "The three core verticals are Personal Protective Safety, Environmental Safety and Road Safety." },
-  { q: "Do you also provide training and consulting?", a: "Yes. The brochure includes 5 service verticals covering training, consulting, digital printing, material supplies and system installations." },
+  { q: "Do you also provide training and consulting?", a: "Yes. The brochure includes 5 service verticals covering training, consulting, digital printing, car hire and system installations." },
   { q: "How many branch offices are mentioned in the brochure?", a: "The brochure lists 3 branch offices: Indore, Pune and Nasik." },
 ];
 

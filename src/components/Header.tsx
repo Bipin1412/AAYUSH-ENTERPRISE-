@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,11 +12,11 @@ const nav = [
   { to: "/brands", label: "Brands" },
   { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
+  { to: "/public-release", label: "Public Release" },
 ];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-40 w-full border-b-2 border-secondary bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">

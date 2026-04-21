@@ -160,19 +160,14 @@ export const serviceSections: ServiceSection[] = [
     ],
   },
   {
-    title: "Material Supplies",
-    description: "End-to-end safety supplies from head to toe.",
+    title: "Car Hire",
+    description: "Flexible car hire support for business travel, site visits and employee movement.",
     items: [
-      "Safety PPE's - Head to Toe",
-      "Safety PAPR - Personalized Air Purifying Respirators",
-      "Road Safety Equipments",
-      "Antiskid Tapes",
-      "Confined Space Rescue Kits - K Pods / Tripods etc.",
-      "LOTO Hardware's - Lock / Hasp / Other Required Materials",
-      "Unique Safety Products - Anti Skid Tapes / Mc Cue Rack & Property Protectors / Knuffi - Corner Hazard Protectors / Jonesco Environment Caring Items",
-      "Fire Extinguishers / Balls / Tubes, Hose Reels / Hose Boxes / Hoses Etc.",
-      "Fire Sprinkler Supplies",
-      "Customized Safety Products - Based on Need of the Plant",
+      "Local and outstation car hire",
+      "Site visit and client meeting travel",
+      "Employee pickup and drop support",
+      "Short-term and long-term rental options",
+      "Flexible scheduling for project requirements",
     ],
   },
   {
@@ -388,4 +383,3 @@ export const miscProducts: MiscProduct[] = [
     useCase: "Fire water network and hydrant line installation",
   },
 ];
-

@@ -7,7 +7,7 @@ const Services = () => {
     <>
       <PageHero
         title="Our Services"
-        subtitle="The brochure groups Aayush Enterprises into five service verticals: training, consulting, digital printing, material supplies and complete system installations."
+        subtitle="The brochure groups Aayush Enterprises into five service verticals: training, consulting, digital printing, car hire and complete system installations."
       />
 
       <section className="py-20 md:py-28 bg-background">
@@ -56,4 +56,3 @@ const Services = () => {
 };
 
 export default Services;
-

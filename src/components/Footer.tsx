@@ -45,6 +45,7 @@ const Footer = () => {
               { to: "/brands", label: "Brands" },
               { to: "/services", label: "Services" },
               { to: "/contact", label: "Contact" },
+              { to: "/public-release", label: "Public Release" },
               { to: "/enquiry", label: "Get a Quote" },
             ].map((l) => (
               <li key={l.to}>
@@ -97,4 +98,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
