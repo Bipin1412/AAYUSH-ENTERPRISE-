@@ -7,7 +7,7 @@ import { products, categories } from "@/data/products";
 import { miscProducts } from "@/data/brochure";
 import { cn } from "@/lib/utils";
 
-const catalogPdf = "/assets/E-Square-Alliance-Lockout-Tagout-Catalogue.pdf";
+const catalogPdf = `${import.meta.env.BASE_URL}assets/E-Square-Alliance-Lockout-Tagout-Catalogue.pdf`;
 
 const Products = () => {
   const [active, setActive] = useState("All");
