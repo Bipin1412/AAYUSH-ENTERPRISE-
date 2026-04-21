@@ -25,7 +25,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Aayush Enterprises"
-            className="h-11 w-auto max-w-[220px] object-contain transition-transform group-hover:scale-[1.02] sm:h-12 md:h-14"
+            className="h-14 w-auto max-w-[320px] object-contain transition-transform group-hover:scale-[1.02] sm:h-16 sm:max-w-[380px] md:h-[4.5rem] md:max-w-[460px]"
           />
         </Link>
 
