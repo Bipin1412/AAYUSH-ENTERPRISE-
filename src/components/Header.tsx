@@ -22,11 +22,18 @@ const Header = () => {
     <header className="sticky top-0 z-40 w-full border-b-2 border-secondary bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
-          <img
+          {/* <img
             src={logo}
             alt="Aayush Enterprises"
-            className="h-14 w-auto max-w-[320px] object-contain transition-transform group-hover:scale-[1.02] sm:h-16 sm:max-w-[380px] md:h-[4.5rem] md:max-w-[460px]"
-          />
+            className="h-14 w-auto max-w-[200px] object-contain transition-transform group-hover:scale-[1.02] sm:h-16 sm:max-w-[380px] md:h-[4.5rem] md:max-w-[460px]"
+          /> */}
+
+<img
+  src={logo}
+  alt="Aayush Enterprises"
+  className="h-14 w-auto max-w-[200px] object-contain transition-transform group-hover:scale-[1.02] sm:h-16 sm:max-w-[380px] md:h-[4.5rem] md:max-w-[460px] mix-blend-mode-multiply"
+/>
+
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
