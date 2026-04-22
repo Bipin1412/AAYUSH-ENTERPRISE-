@@ -14,6 +14,10 @@ import Contact from "./pages/Contact";
 import PublicRelease from "./pages/PublicRelease";
 import Enquiry from "./pages/Enquiry";
 import NotFound from "./pages/NotFound.tsx";
+import AdminRoute from "./components/AdminRoute";
+import AdminLayout from "./components/AdminLayout";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +38,17 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/public-release" element={<PublicRelease />} />
             <Route path="/enquiry" element={<Enquiry />} />
+          </Route>
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <AdminRoute>
+                <AdminLayout />
+              </AdminRoute>
+            }
+          >
+            <Route index element={<AdminDashboard />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
