@@ -1,26 +1,51 @@
-const SESSION_KEY = "aayush_admin_session";
-
-const DEFAULT_USERNAME = "admin";
-const DEFAULT_PASSWORD = "admin123";
-
-const getStorage = () => (typeof window !== "undefined" ? window.sessionStorage : null);
-
-export const adminCredentials = {
-  username: import.meta.env.VITE_ADMIN_USERNAME ?? DEFAULT_USERNAME,
-  password: import.meta.env.VITE_ADMIN_PASSWORD ?? DEFAULT_PASSWORD,
+type AdminAuthResponse = {
+  authenticated: boolean;
 };
 
-export const isAdminAuthenticated = () => getStorage()?.getItem(SESSION_KEY) === "true";
+const getOptions = (method: "GET" | "POST" = "GET", body?: BodyInit) => ({
+  method,
+  headers: body ? { "Content-Type": "application/json" } : undefined,
+  credentials: "include" as const,
+  body,
+});
 
-export const signInAdmin = (username: string, password: string) => {
-  if (username.trim() !== adminCredentials.username || password !== adminCredentials.password) {
+export const verifyAdminSession = async () => {
+  try {
+    const response = await fetch("/api/admin-status", getOptions());
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const data = (await response.json()) as AdminAuthResponse;
+    return data.authenticated === true;
+  } catch {
     return false;
   }
-
-  getStorage()?.setItem(SESSION_KEY, "true");
-  return true;
 };
 
-export const signOutAdmin = () => {
-  getStorage()?.removeItem(SESSION_KEY);
+export const signInAdmin = async (email: string, password: string) => {
+  try {
+    const response = await fetch(
+      "/api/admin-login",
+      getOptions("POST", JSON.stringify({ email, password })),
+    );
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const data = (await response.json()) as AdminAuthResponse;
+    return data.authenticated === true;
+  } catch {
+    return false;
+  }
+};
+
+export const signOutAdmin = async () => {
+  try {
+    await fetch("/api/admin-logout", getOptions("POST"));
+  } catch {
+    // Ignore logout failures; the local session is server-controlled.
+  }
 };

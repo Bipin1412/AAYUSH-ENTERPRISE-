@@ -1,36 +1,65 @@
-import { useState, type FormEvent } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState, type FormEvent } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { adminCredentials, isAdminAuthenticated, signInAdmin } from "@/lib/admin-auth";
+import { signInAdmin, verifyAdminSession } from "@/lib/admin-auth";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [checking, setChecking] = useState(true);
 
-  if (isAdminAuthenticated()) {
-    return <Navigate to="/admin" replace />;
-  }
+  useEffect(() => {
+    let active = true;
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const check = async () => {
+      const authenticated = await verifyAdminSession();
+      if (!active) {
+        return;
+      }
+
+      if (authenticated) {
+        navigate("/admin", { replace: true });
+        return;
+      }
+
+      setChecking(false);
+    };
+
+    void check();
+
+    return () => {
+      active = false;
+    };
+  }, [navigate]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
 
-    const success = signInAdmin(username, password);
+    const success = await signInAdmin(email, password);
     if (!success) {
-      setError("Invalid username or password.");
+      setError("Invalid email or password.");
       return;
     }
 
     const from = (location.state as { from?: { pathname?: string } } | null)?.from?.pathname ?? "/admin";
     navigate(from, { replace: true });
   };
+
+  if (checking) {
+    return (
+      <div className="min-h-screen grid place-items-center bg-background">
+        <div className="text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">Loading admin</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,hsl(var(--primary))/0.14,transparent_34%),linear-gradient(180deg,hsl(var(--muted))_0%,hsl(var(--background))_42%)]">
@@ -44,37 +73,27 @@ const AdminLogin = () => {
             Secure access for the website team.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            Sign in to open the admin dashboard and manage the internal site controls. This first version uses
-            a protected client-side session, so it is suitable for gated access but not for high-security use.
+            Sign in with your private admin email and password. The credentials are verified on the server,
+            not in the browser, so they are not exposed in the frontend bundle.
           </p>
-
-          <div className="mt-8 grid gap-3 max-w-xl sm:grid-cols-2">
-            <div className="rounded-xl border-2 border-secondary bg-card p-4">
-              <div className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">Username</div>
-              <div className="mt-1 font-semibold">{adminCredentials.username}</div>
-            </div>
-            <div className="rounded-xl border-2 border-secondary bg-card p-4">
-              <div className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">Password</div>
-              <div className="mt-1 font-semibold">Configured in auth file or env vars</div>
-            </div>
-          </div>
         </div>
 
         <Card className="border-2 border-secondary shadow-bold">
           <CardHeader>
             <CardTitle className="font-display text-3xl uppercase">Enter Admin</CardTitle>
-            <CardDescription>Use the credentials configured for the admin area.</CardDescription>
+            <CardDescription>Use your private email and password to continue.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
-                <Label htmlFor="username">Username</Label>
+                <Label htmlFor="email">Email</Label>
                 <Input
-                  id="username"
-                  value={username}
-                  onChange={(event) => setUsername(event.target.value)}
-                  placeholder="admin"
-                  autoComplete="username"
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="you@example.com"
+                  autoComplete="email"
                 />
               </div>
 
@@ -85,7 +104,7 @@ const AdminLogin = () => {
                   type="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  placeholder="••••••••"
+                  placeholder="Enter your password"
                   autoComplete="current-password"
                 />
               </div>
