@@ -74,16 +74,18 @@ const Contact = () => {
             </div>
 
             <div className="border-2 border-secondary p-6 bg-card">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-3">Direct Contact Persons</div>
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                Direct Contact Persons
+              </div>
               <div className="grid gap-4">
                 {contactPersons.map((person) => (
-                  <div key={person.name} className="flex gap-4 items-start">
+                  <div key={person.name} className="flex items-center justify-start gap-4 text-left">
                     <div className="h-11 w-11 grid place-items-center bg-primary text-primary-foreground border-2 border-secondary shrink-0">
                       <UserRound className="h-5 w-5" strokeWidth={2.5} />
                     </div>
-                    <div>
-                      <div className="font-bold">{person.name}</div>
-                      <div className="text-sm text-muted-foreground">{person.phone}</div>
+                    <div className="min-w-0">
+                      <div className="text-base font-black uppercase tracking-wide">{person.name}</div>
+                      <div className="text-sm font-bold text-muted-foreground">{person.phone}</div>
                     </div>
                   </div>
                 ))}

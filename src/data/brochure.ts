@@ -34,22 +34,22 @@ export const company = {
     "Gat Bo 197/01/U Phadke Vasti, Nighoje Village, Nighoje Chakan, Tal. Khed, Dist. Pune, Maharashtra - 410501",
     "Pune Nagar Road, Opp. HDFC Bank, Koregaon Bhima, Tal. Shiuru, Dist. Pune - 412216",
   ],
-  branchOffices: ["Indore (M.P.)", "Pune (M.H.)", "Nasik (M.H.)"],
+  branchOffices: ["Indore (M.P.)","Mumbai (M.H.)", "Pune (M.H.)", "Nasik (M.H.)", "Chandigarh (P.B.)"],
 };
 
 export const contactPersons: ContactPerson[] = [
   {
-    name: "Ashwin Kurhe",
-    phone: "+91 742 084 6602",
+    name: "",
+    phone: "+91 7420846602",
     phoneDigits: "917420846602",
   },
   {
-    name: "Ganesh Bhujbal",
-    phone: "+91 816 064 7924",
+    name: "",
+    phone: "+91 8160647924",
     phoneDigits: "918160647924",
   },
   {
-    name: "Shivaji Thakare",
+    name: "",
     phone: "+91 9423834722",
     phoneDigits: "919423834722",
   },
@@ -63,19 +63,29 @@ export const emails = [
 
 export const coreVerticals = [
   {
-    title: "Personal Protective Safety",
+    title: "Workplace Safety Gears",
     summary:
-      "Head-to-toe PPE, height safety systems, respiratory protection and workwear for workers across industries.",
+      "Head-to-toe PPE, helmets, gloves, footwear, workwear and respiratory protection for workers across industries.",
   },
   {
-    title: "Environmental Safety",
+    title: "Consulting and Auditing Services",
     summary:
-      "Spill control, corner protection, industrial cleaning, waste handling and environmental care products.",
+      "Safety audits, risk assessments, compliance reviews and advisory support for industrial sites.",
   },
   {
-    title: "Road Safety",
+    title: "System Installations",
     summary:
-      "Signages, antiskid solutions, road safety products and site guidance systems for safe movement on and around worksites.",
+      "Fire systems, gas detection, public address, LOTO and industrial safety system installation support.",
+  },
+  {
+    title: "Turn Key Projects",
+    summary:
+      "End-to-end execution covering planning, sourcing, installation and handover for site-wide safety needs.",
+  },
+  {
+    title: "Car Hire Services",
+    summary:
+      "Flexible local and outstation travel support for site visits, meetings and project movement.",
   },
 ];
 
@@ -99,7 +109,7 @@ export const brochureHighlights = [
   },
   {
     label: "Core Verticals",
-    value: "3",
+    value: "5",
   },
   {
     label: "Business Focus",

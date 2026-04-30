@@ -38,7 +38,7 @@ const About = () => {
               Safety across every worksite.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Founded in {company.established}, Aayush Enterprises is headquartered in Aurangabad, Maharashtra with three branch offices and two manufacturing locations. The company provides complete safety solutions across Personal Protective Safety, Environmental Safety and Road Safety.
+              Founded in {company.established}, Aayush Enterprises is headquartered in Aurangabad, Maharashtra with three branch offices and two manufacturing locations. The company provides complete safety solutions across Workplace Safety Gears, Consulting and Auditing Services, System Installations, Turn Key Projects and Car Hire Services.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               The brochure emphasizes protecting people at the workplace regardless of their work type, supported by trainings, consulting, digital printing, car hire and complete system installations.

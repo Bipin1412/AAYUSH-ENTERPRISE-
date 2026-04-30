@@ -16,14 +16,16 @@ const features = [
 ];
 
 const testimonials = [
-  { name: "Personal Protective Safety", role: "Core Vertical", text: "Helmet, gloves, shoes, workwear, respiratory protection and height safety systems are part of the brochure range." },
-  { name: "Environmental Safety", role: "Core Vertical", text: "Jonesco, ESP, Knuffi and spill-response products cover workplace environmental protection needs." },
-  { name: "Road Safety", role: "Core Vertical", text: "Antiskid tape, photoluminescent signage and road safety materials help improve site movement and emergency visibility." },
+  { name: "Workplace Safety Gears", role: "Core Vertical", text: "Helmet, gloves, shoes, workwear and respiratory protection cover everyday workplace safety needs." },
+  { name: "Consulting and Auditing Services", role: "Core Vertical", text: "Audits, assessments and advisory support help teams strengthen compliance and safety culture." },
+  { name: "System Installations", role: "Core Vertical", text: "LOTO, fire systems, gas detection and industrial safety installations support site readiness." },
+  { name: "Turn Key Projects", role: "Core Vertical", text: "A single team can manage planning, sourcing, execution and handover for complete safety projects." },
+  { name: "Car Hire Services", role: "Core Vertical", text: "Local and outstation travel support keeps site visits and project movement flexible." },
 ];
 
 const faqs = [
   { q: "When was Aayush Enterprises established?", a: "The company was established in 2017 and is headquartered in Aurangabad, Maharashtra." },
-  { q: "What are the main business verticals?", a: "The three core verticals are Personal Protective Safety, Environmental Safety and Road Safety." },
+  { q: "What are the main business verticals?", a: "The five core verticals are Workplace Safety Gears, Consulting and Auditing Services, System Installations, Turn Key Projects and Car Hire Services." },
   { q: "Do you also provide training and consulting?", a: "Yes. The brochure includes 5 service verticals covering training, consulting, digital printing, car hire and system installations." },
   { q: "How many branch offices are mentioned in the brochure?", a: "The brochure lists 3 branch offices: Indore, Pune and Nasik." },
 ];
@@ -35,7 +37,7 @@ const Home = () => {
 
       <section className="py-16 md:py-20 bg-background border-b-2 border-secondary/10">
         <div className="container">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {coreVerticals.map((item, index) => (
               <div
                 key={item.title}
@@ -44,7 +46,7 @@ const Home = () => {
                 }`}
               >
                 <div className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-3">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
                 <h3 className="font-display text-2xl uppercase leading-tight mb-3">{item.title}</h3>
                 <p className={index === 1 ? "text-sm text-secondary-foreground/75" : "text-sm text-muted-foreground"}>

@@ -22,12 +22,9 @@ const HeroSlider = () => {
 
       <div className="relative h-full container flex items-center">
         <div className="max-w-3xl text-secondary-foreground animate-slide-up">
-          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] mb-6 border-2 border-primary-foreground/0">
-            <span className="h-1.5 w-1.5 bg-secondary rounded-full" />
-            {company.tagline}
-          </div>
+         
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-[0.95]">
-            Complete Safety Solutions Since 2017
+            SECURING SAFER WORKPLACES
           </h1>
           <p className="mt-6 text-lg md:text-xl text-secondary-foreground/85 max-w-2xl">
             Aayush Enterprises delivers training, consulting, products and system installations from Aurangabad to workplaces across India.

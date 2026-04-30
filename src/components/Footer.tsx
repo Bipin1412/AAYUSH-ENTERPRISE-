@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { ShieldCheck, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
-import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE } from "@/lib/whatsapp";
+import { COMPANY_ADDRESS, COMPANY_PHONE } from "@/lib/whatsapp";
 import { company } from "@/data/brochure";
+
+const footerEmails = ["sales@aayushenterprises.in", "ayushenterprisesaurangabad@gmail.com"];
 
 const Footer = () => {
   return (
@@ -60,12 +62,11 @@ const Footer = () => {
         <div>
           <h4 className="font-display text-lg mb-4 text-primary">Categories</h4>
           <ul className="space-y-2 text-sm text-secondary-foreground/70">
-            <li>Personal Protective Safety</li>
-            <li>Environmental Safety</li>
-            <li>Road Safety</li>
-            <li>Training</li>
-            <li>Consulting</li>
-            <li>Installations</li>
+            <li>Workplace Safety Gears</li>
+            <li>Consulting and Auditing Services</li>
+            <li>System Installations</li>
+            <li>Turn Key Projects</li>
+            <li>Car Hire Services</li>
           </ul>
         </div>
 
@@ -78,9 +79,11 @@ const Footer = () => {
             <li className="flex gap-3">
               <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {COMPANY_PHONE}
             </li>
-            <li className="flex gap-3">
-              <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {COMPANY_EMAIL}
-            </li>
+            {footerEmails.map((email) => (
+              <li key={email} className="flex gap-3">
+                <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {email}
+              </li>
+            ))}
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {company.branchOffices.join(", ")}
             </li>
