@@ -1,8 +1,7 @@
-import { Outlet, Link, NavLink, useNavigate } from "react-router-dom";
-import { FileText, Home, LayoutDashboard, LogOut, ShieldCheck } from "lucide-react";
+import { Outlet, Link, NavLink } from "react-router-dom";
+import { FileText, Home, LayoutDashboard, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { signOutAdmin } from "@/lib/admin-auth";
 import logo from "@/assets/logo-aayush.webp";
 
 const adminNav = [
@@ -13,13 +12,6 @@ const adminNav = [
 ];
 
 const AdminLayout = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await signOutAdmin();
-    navigate("/admin/login", { replace: true });
-  };
-
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,hsl(var(--muted))_0%,hsl(var(--background))_36%)]">
       <header className="border-b-2 border-secondary bg-background/95 backdrop-blur">
@@ -32,7 +24,7 @@ const AdminLayout = () => {
             />
             <div className="hidden sm:block">
               <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
-                Admin Area
+                Content Studio
               </div>
               <div className="font-display text-lg uppercase leading-none">Control Panel</div>
             </div>
@@ -42,14 +34,9 @@ const AdminLayout = () => {
             <Button asChild variant="outline" className="hidden sm:inline-flex border-2 border-secondary font-bold uppercase tracking-wider">
               <Link to="/">View Site</Link>
             </Button>
-            <Button
-              type="button"
-              onClick={handleLogout}
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold uppercase tracking-wider border-2 border-secondary"
-            >
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
-            </Button>
+            <div className="hidden rounded-full border-2 border-secondary bg-secondary/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-secondary sm:inline-flex">
+              UI only
+            </div>
           </div>
         </div>
       </header>
@@ -62,9 +49,9 @@ const AdminLayout = () => {
             </div>
             <div>
               <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
-                Secure Access
+                No backend yet
               </div>
-              <div className="font-display text-xl uppercase">Admin Menu</div>
+              <div className="font-display text-xl uppercase">Workspace Menu</div>
             </div>
           </div>
 
