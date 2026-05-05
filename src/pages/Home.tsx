@@ -1,5 +1,20 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Truck, Award, Tag, ArrowRight, Leaf, MapPin, Building2 } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowRight,
+  Award,
+  Building2,
+  CheckCircle2,
+  Factory,
+  HardHat,
+  HeartPulse,
+  Leaf,
+  MapPin,
+  Radar,
+  ScanSearch,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import HeroSlider from "@/components/HeroSlider";
@@ -8,19 +23,24 @@ import { products } from "@/data/products";
 import { coreVerticals, brochureHighlights, company } from "@/data/brochure";
 import { whatsappLink } from "@/lib/whatsapp";
 
-const features = [
-  { icon: Award, title: "Established In 2017", desc: "Headquartered in Aurangabad with manufacturing and branch support across Maharashtra and Madhya Pradesh." },
-  { icon: ShieldCheck, title: "24 Brand Partners", desc: "Brochure-backed supply across PPE, fire safety, gas detection, electrical safety and environmental protection." },
-  { icon: Truck, title: "Complete Safety Coverage", desc: "Training, consulting, supplies and installations are all managed under one roof." },
-  { icon: Tag, title: "3 Branch Offices", desc: "Indore, Pune and Nasik branch presence supports customers across industrial belts." },
+const premiumStory = [
+  { icon: HeartPulse, title: "Core Mission", desc: "Achieve zero workplace fatalities and injuries." },
+  { icon: ShieldCheck, title: "Founded In 2017", desc: "Occupational Health and Safety for modern workplaces." },
+  { icon: Radar, title: "Our Approach", desc: "Heavy-duty physical protection with smart, modern technology." },
+  { icon: Factory, title: "Industries Served", desc: "Construction, manufacturing, chemical processing, warehousing, and energy." },
 ];
 
-const testimonials = [
-  { name: "Workplace Safety Gears", role: "Core Vertical", text: "Helmet, gloves, shoes, workwear and respiratory protection cover everyday workplace safety needs." },
-  { name: "Consulting and Auditing Services", role: "Core Vertical", text: "Audits, assessments and advisory support help teams strengthen compliance and safety culture." },
-  { name: "System Installations", role: "Core Vertical", text: "LOTO, fire systems, gas detection and industrial safety installations support site readiness." },
-  { name: "Turn Key Projects", role: "Core Vertical", text: "A single team can manage planning, sourcing, execution and handover for complete safety projects." },
-  { name: "Car Hire Services", role: "Core Vertical", text: "Local and outstation travel support keeps site visits and project movement flexible." },
+const premiumCapabilities = [
+  { icon: HardHat, title: "Advanced Wearables", desc: "Smart PPE including helmets, vests, and eyewear designed to protect and monitor." },
+  { icon: ScanSearch, title: "Hazard Prevention", desc: "Advanced site monitoring tools detect gas leaks, structural weaknesses, and environmental threats." },
+  { icon: Users, title: "Safety Consulting", desc: "Tailored risk assessment and training modules help businesses align with global safety standards." },
+  { icon: AlertTriangle, title: "Tech-Driven Solutions", desc: "Real-time alert systems keep workers connected to safety hubs instantly." },
+];
+
+const premiumReasons = [
+  { icon: Award, title: "Uncompromising Quality", desc: "Every product we distribute or manufacture undergoes rigorous stress testing to meet international safety benchmarks." },
+  { icon: Factory, title: "Proven Track Record", desc: "Since 2017, we have helped facilities reduce their annual incident rates." },
+  { icon: CheckCircle2, title: "Worker-Centric Design", desc: "Ergonomic designs ensure that workers actually want to wear their protective equipment." },
 ];
 
 const faqs = [
@@ -63,7 +83,7 @@ const Home = () => {
           <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
             <div>
               <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-                <span className="text-primary">●</span> Brochure Products
+                <span className="text-primary">â—</span> Brochure Products
               </div>
               <h2 className="font-display text-4xl md:text-6xl uppercase max-w-2xl">
                 Featured Safety <span className="bg-primary text-primary-foreground px-2">Products</span>
@@ -79,34 +99,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-secondary text-secondary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05]" style={{
-          backgroundImage: `repeating-linear-gradient(-45deg, hsl(var(--primary)) 0 30px, transparent 30px 60px)`,
-        }} />
-        <div className="container relative">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-3">● Why Choose Us</div>
-            <h2 className="font-display text-4xl md:text-6xl uppercase">Built Around Safety Culture.</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((f, i) => (
-              <div key={i} className="group relative bg-secondary border-2 border-secondary-foreground/10 p-7 hover:border-primary transition-colors">
-                <div className="absolute -top-5 left-7 h-12 w-12 grid place-items-center bg-primary text-primary-foreground border-2 border-secondary group-hover:rotate-6 transition-transform">
-                  <f.icon className="h-6 w-6" strokeWidth={2.5} />
-                </div>
-                <div className="text-5xl font-display text-primary/20 mb-2 mt-2">0{i + 1}</div>
-                <h3 className="font-display text-xl uppercase mb-2">{f.title}</h3>
-                <p className="text-sm text-secondary-foreground/70">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 md:py-28 bg-background">
         <div className="container grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
           <div className="bg-muted border-2 border-secondary p-8">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">● Company Snapshot</div>
+            <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">â— Company Snapshot</div>
             <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">
               {company.tagline} <br />
               From Aurangabad to the shop floor.
@@ -134,7 +130,7 @@ const Home = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-              <span className="text-primary">●</span> Brand Coverage
+              <span className="text-primary">â—</span> Brand Coverage
             </div>
             <h2 className="font-display text-4xl md:text-6xl uppercase">
               24 <span className="bg-secondary text-secondary-foreground px-2">Brands</span> Represented
@@ -161,7 +157,7 @@ const Home = () => {
       <section className="bg-primary text-primary-foreground border-y-4 border-secondary">
         <div className="container py-16 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] mb-3">● Ready To Order?</div>
+            <div className="text-xs font-bold uppercase tracking-[0.3em] mb-3">â— Ready To Order?</div>
             <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">
               Get a Quote in Under 60 Seconds
             </h2>
@@ -184,7 +180,7 @@ const Home = () => {
         <div className="container grid lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
           <div>
             <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-              <span className="text-primary">●</span> FAQ
+              <span className="text-primary">â—</span> FAQ
             </div>
             <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">Questions?<br />We&apos;ve Got Answers.</h2>
             <p className="mt-4 text-muted-foreground">Use this brochure-backed summary to understand the company scope before you enquire.</p>

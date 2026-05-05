@@ -5,7 +5,7 @@ const npmCommand = isWindows ? "npm.cmd" : "npm";
 const nodeCommand = process.execPath;
 
 const children = [
-  spawn(nodeCommand, ["scripts/dev-api.mjs"], {
+  spawn(nodeCommand, ["scripts/dev-backend.mjs"], {
     cwd: process.cwd(),
     stdio: "inherit",
     windowsHide: true,
@@ -59,4 +59,4 @@ for (const child of children) {
 process.on("SIGINT", () => shutdown(0));
 process.on("SIGTERM", () => shutdown(0));
 
-console.log("Starting backend on 127.0.0.1:3000 and frontend on 8080...");
+console.log("Starting backend on 127.0.0.1:3001 and frontend on 8080...");
