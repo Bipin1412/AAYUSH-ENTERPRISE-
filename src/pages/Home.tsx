@@ -45,7 +45,7 @@ const premiumReasons = [
 
 const faqs = [
   { q: "When was Aayush Enterprises established?", a: "The company was established in 2017 and is headquartered in Aurangabad, Maharashtra." },
-  { q: "What are the main business verticals?", a: "The five core verticals are Workplace Safety Gears, Consulting and Auditing Services, System Installations, Turn Key Projects and Car Hire Services." },
+  { q: "What are the main business verticals?", a: "The five core verticals are Workplace Safety Gears, System Installations, Car Hire Services, Auditing and Consulting Services and Turn Key Projects." },
   { q: "Do you also provide training and consulting?", a: "Yes. The brochure includes 5 service verticals covering training, consulting, digital printing, car hire and system installations." },
   { q: "How many branch offices are mentioned in the brochure?", a: "The brochure lists 3 branch offices: Indore, Pune and Nasik." },
 ];
@@ -61,17 +61,36 @@ const Home = () => {
             {coreVerticals.map((item, index) => (
               <div
                 key={item.title}
-                className={`p-7 border-2 transition-transform hover:-translate-y-1 ${
-                  index === 1 ? "bg-secondary text-secondary-foreground border-secondary shadow-bold" : "bg-card border-secondary"
+                className={`group relative overflow-hidden rounded-[2rem] border p-7 transition-all duration-300 hover:-translate-y-1 ${
+                  index === 1
+                    ? "border-transparent bg-[#101010] text-white shadow-[0_24px_60px_rgba(0,0,0,0.32)]"
+                    : "border-secondary/15 bg-card shadow-[0_20px_45px_rgba(15,23,42,0.08)]"
                 }`}
               >
-                <div className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-3">
-                  {String(index + 1).padStart(2, "0")}
+                <div
+                  className={`absolute inset-x-0 top-0 h-1 ${
+                    index === 1 ? "bg-primary" : "bg-gradient-to-r from-primary via-primary/70 to-transparent"
+                  }`}
+                />
+                <div className="mb-6 flex items-center justify-between gap-4">
+                  <div className={`inline-flex rounded-full border px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.35em] ${
+                    index === 1 ? "border-white/15 text-primary" : "border-secondary/15 text-primary"
+                  }`}>
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                  <div className={`h-10 w-10 rounded-full border ${index === 1 ? "border-white/10 bg-white/5" : "border-secondary/10 bg-secondary/5"}`} />
                 </div>
-                <h3 className="font-display text-2xl uppercase leading-tight mb-3">{item.title}</h3>
-                <p className={index === 1 ? "text-sm text-secondary-foreground/75" : "text-sm text-muted-foreground"}>
-                  {item.summary}
-                </p>
+                <h3 className="font-display text-xl md:text-2xl uppercase leading-[0.96] mb-5">
+                  {item.title}
+                </h3>
+                <ul className={`space-y-3 text-sm leading-relaxed ${index === 1 ? "text-white/75" : "text-muted-foreground"}`}>
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${index === 1 ? "bg-primary" : "bg-primary"}`} />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

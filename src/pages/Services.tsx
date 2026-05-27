@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import PageHero from "@/components/PageHero";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { serviceSections } from "@/data/brochure";
 
+const serviceParamKey = "service";
+
+const normalizeService = (value: string | null) => {
+  if (!value) {
+    return serviceSections[0].title;
+  }
+
+  const match = serviceSections.find((section) => section.title === value);
+  return match?.title ?? serviceSections[0].title;
+};
+
 const Services = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeService, setActiveService] = useState(() => normalizeService(searchParams.get(serviceParamKey)));
+
+  useEffect(() => {
+    setActiveService(normalizeService(searchParams.get(serviceParamKey)));
+  }, [searchParams]);
+
   return (
     <>
       <PageHero
@@ -12,7 +32,14 @@ const Services = () => {
 
       <section className="py-20 md:py-28 bg-background">
         <div className="container">
-          <Tabs defaultValue={serviceSections[0].title} className="w-full">
+          <Tabs
+            value={activeService}
+            onValueChange={(value) => {
+              setActiveService(value);
+              setSearchParams({ [serviceParamKey]: value });
+            }}
+            className="w-full"
+          >
             <TabsList className="w-full flex flex-wrap h-auto justify-start gap-2 bg-transparent p-0 mb-8">
               {serviceSections.map((section) => (
                 <TabsTrigger

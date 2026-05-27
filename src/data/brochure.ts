@@ -23,6 +23,11 @@ export type MiscProduct = {
   useCase: string;
 };
 
+export type CoreVertical = {
+  title: string;
+  points: string[];
+};
+
 export const company = {
   name: "AAYUSH ENTERPRISES",
   tagline: "PROTECTING LIVES",
@@ -61,31 +66,46 @@ export const emails = [
   "ayushenterprisesaurangabad@gmail.com",
 ];
 
-export const coreVerticals = [
+export const coreVerticals: CoreVertical[] = [
   {
     title: "Workplace Safety Gears",
-    summary:
-      "Head-to-toe PPE, helmets, gloves, footwear, workwear and respiratory protection for workers across industries.",
-  },
-  {
-    title: "Consulting and Auditing Services",
-    summary:
-      "Safety audits, risk assessments, compliance reviews and advisory support for industrial sites.",
+    points: [
+      "🦺 Complete safety gear for workers in all industries.",
+      "⛑️ Helmets, gloves, safety shoes, work clothes, and breathing protection.",
+      "🏭 Made for everyday use at industrial sites and workplaces.",
+    ],
   },
   {
     title: "System Installations",
-    summary:
-      "Fire systems, gas detection, public address, LOTO and industrial safety system installation support.",
-  },
-  {
-    title: "Turn Key Projects",
-    summary:
-      "End-to-end execution covering planning, sourcing, installation and handover for site-wide safety needs.",
+    points: [
+      "🔥 Fire safety systems, gas detection, and public announcement solutions.",
+      "🔒 Support for LOTO and industrial safety system setup.",
+      "🏭 Made for factory safety and utility operations.",
+    ],
   },
   {
     title: "Car Hire Services",
-    summary:
-      "Flexible local and outstation travel support for site visits, meetings and project movement.",
+    points: [
+      "🚗 Local and outstation travel support.",
+      "📍 Travel for site visits, meetings, and project work.",
+      "🕒 Flexible scheduling based on operational needs.",
+    ],
+  },
+  {
+    title: "Auditing and Consulting Services",
+    points: [
+      "🛡️ Safety audits, risk assessments, and compliance reviews.  ",
+      "🏭 Advisory support for industrial sites and plant operations.",
+      "✅ Practical guidance for safer, audit-ready workplaces.",
+    ],
+  },
+  {
+    title: "Turn Key Projects",
+    points: [
+      "📋 End-to-end planning, sourcing, and installation support.",
+      "🛠️ Complete setup and handover for site-wide safety needs.",
+      "✅ Single-point execution from planning to completion.",
+    ],
   },
 ];
 

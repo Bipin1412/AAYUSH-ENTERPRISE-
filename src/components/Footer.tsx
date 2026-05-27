@@ -63,10 +63,10 @@ const Footer = () => {
           <h4 className="font-display text-lg mb-4 text-primary">Categories</h4>
           <ul className="space-y-2 text-sm text-secondary-foreground/70">
             <li>Workplace Safety Gears</li>
-            <li>Consulting and Auditing Services</li>
             <li>System Installations</li>
-            <li>Turn Key Projects</li>
             <li>Car Hire Services</li>
+            <li>Auditing and Consulting Services</li>
+            <li>Turn Key Projects</li>
           </ul>
         </div>
 
