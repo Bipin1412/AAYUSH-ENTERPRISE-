@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CarFront, GraduationCap, MessageCircle, Printer, ShieldCheck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/whatsapp";
-import hero1 from "@/assets/hero-1.jpg";
 
 const serviceHighlights = [
   { title: "Various Trainings", icon: GraduationCap },
@@ -17,7 +16,7 @@ const HeroSlider = () => {
     <section className="relative h-[88vh] min-h-[600px] overflow-hidden bg-secondary">
       <div className="absolute inset-0">
         <img
-          src={hero1}
+          src="/banner-new-image.png"
           alt="Complete Safety Solutions Since 2017"
           width={1920}
           height={1080}
