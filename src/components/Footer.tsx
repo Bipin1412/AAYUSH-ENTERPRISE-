@@ -4,6 +4,7 @@ import { COMPANY_ADDRESS, COMPANY_PHONE } from "@/lib/whatsapp";
 import { company } from "@/data/brochure";
 
 const footerEmails = ["sales@aayushenterprises.in", "ayushenterprisesaurangabad@gmail.com"];
+const footerPhoneNumbers = ["9922227164", "9766804665"];
 
 const Footer = () => {
   return (
@@ -79,6 +80,11 @@ const Footer = () => {
             <li className="flex gap-3">
               <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {COMPANY_PHONE}
             </li>
+            {footerPhoneNumbers.map((phone) => (
+              <li key={phone} className="flex gap-3">
+                <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {phone}
+              </li>
+            ))}
             {footerEmails.map((email) => (
               <li key={email} className="flex gap-3">
                 <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" /> {email}

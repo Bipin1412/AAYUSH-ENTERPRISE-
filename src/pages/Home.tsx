@@ -3,13 +3,10 @@ import {
   AlertTriangle,
   ArrowRight,
   Award,
-  Building2,
   CheckCircle2,
   Factory,
   HardHat,
   HeartPulse,
-  Leaf,
-  MapPin,
   Radar,
   ScanSearch,
   ShieldCheck,
@@ -21,7 +18,6 @@ import HeroSlider from "@/components/HeroSlider";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { coreVerticals, brochureHighlights, company } from "@/data/brochure";
-import { whatsappLink } from "@/lib/whatsapp";
 
 const premiumStory = [
   { icon: HeartPulse, title: "Core Mission", desc: "Achieve zero workplace fatalities and injuries." },
@@ -121,13 +117,13 @@ const Home = () => {
       <section className="py-20 md:py-28 bg-background">
         <div className="container grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
           <div className="bg-muted border-2 border-secondary p-8">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">â— Company Snapshot</div>
+            <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">● Company Snapshot</div>
             <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">
               {company.tagline} <br />
-              From Aurangabad to the shop floor.
+              
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Aayush Enterprises is an established supplier since {company.established}, headquartered in Aurangabad with three branch offices and two manufacturing locations. The brochure positions the company as a complete safety partner across training, consulting, products and installations.
+              AAYUSH ENTERPRISES" is an organization helping workplaces become more safer and smarter since a decade with dedicated support to ensure precious live's are improved across workplaces
             </p>
             <Button asChild className="mt-8 bg-secondary text-secondary-foreground font-bold uppercase h-12 px-7">
               <Link to="/about">About The Company</Link>
@@ -145,55 +141,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-muted">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-              <span className="text-primary">â—</span> Brand Coverage
-            </div>
-            <h2 className="font-display text-4xl md:text-6xl uppercase">
-              24 <span className="bg-secondary text-secondary-foreground px-2">Brands</span> Represented
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              { icon: Building2, title: "PPE and Height Safety", desc: "Karam, Ansell, Uvex, Leslico, Liberty and Microgard cover protection from head to toe." },
-              { icon: Leaf, title: "Environmental Protection", desc: "Jonesco, ESP, Knuffi and spill-control products cover workplace environmental care." },
-              { icon: MapPin, title: "Road and Site Safety", desc: "Anti skid tape, Glo-Lite and LOTO products improve visibility, control and movement on site." },
-            ].map((card, i) => (
-              <div key={i} className="bg-card border-2 border-secondary p-7">
-                <div className="h-14 w-14 grid place-items-center bg-secondary text-secondary-foreground mb-5">
-                  <card.icon className="h-7 w-7" strokeWidth={2.5} />
-                </div>
-                <h3 className="font-display text-2xl uppercase mb-2">{card.title}</h3>
-                <p className="text-sm text-muted-foreground">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-primary text-primary-foreground border-y-4 border-secondary">
-        <div className="container py-16 flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="max-w-2xl">
-            <div className="text-xs font-bold uppercase tracking-[0.3em] mb-3">â— Ready To Order?</div>
-            <h2 className="font-display text-4xl md:text-5xl uppercase leading-tight">
-              Get a Quote in Under 60 Seconds
-            </h2>
-            <p className="mt-3 text-primary-foreground/80">
-              Talk to the team on WhatsApp or send an enquiry for brochure-aligned products, trainings, consulting and installations.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold uppercase tracking-wider h-14 px-8 text-base">
-              <Link to="/enquiry">Send Enquiry</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground font-bold uppercase tracking-wider h-14 px-8 text-base">
-              <a href={whatsappLink("Hi! I would like a quote for Aayush Enterprises brochure items.")} target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 md:py-28 bg-background">
         <div className="container grid lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
@@ -226,3 +173,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

@@ -68,43 +68,46 @@ export const emails = [
 
 export const coreVerticals: CoreVertical[] = [
   {
-    title: "Workplace Safety Gears",
+    title: "Our Expertise Solutions",
     points: [
-      "🦺 Complete safety gear for workers in all industries.",
-      "⛑️ Helmets, gloves, safety shoes, work clothes, and breathing protection.",
-      "🏭 Made for everyday use at industrial sites and workplaces.",
+      "End-to-end planning, sourcing, and installation support.",
+      "Complete setup and handover for site-wide safety needs.",
+      "Single-point execution from planning to completion.",
+      "Customised tailormade solutions as per customer needs and expectations.",
+    ],
+  },
+  {
+    title: "Capability Building",
+    points: [
+      "The Reality Check: Skills Gap Analysis.",
+      "Mapping Core Competencies.",
+      "Measuring Strategic ROI.",
+      "The Blended Learning Model.",
     ],
   },
   {
     title: "System Installations",
     points: [
-      "🔥 Fire safety systems, gas detection, and public announcement solutions.",
-      "🔒 Support for LOTO and industrial safety system setup.",
-      "🏭 Made for factory safety and utility operations.",
+      " Fire safety systems, gas detection, and public announcement solutions.",
+      " Support for LOTO and industrial safety system setup.",
+      " Made for factory safety and utility operations.",
     ],
   },
   {
     title: "Car Hire Services",
     points: [
-      "🚗 Local and outstation travel support.",
-      "📍 Travel for site visits, meetings, and project work.",
-      "🕒 Flexible scheduling based on operational needs.",
+      "Customized solutions for your trip with the safest commute.",
+      "Special focus towards woman and child safety.",
+      "Clean and hygienic vehicles.",
+      "Highly trained and experienced chauffeurs.",
     ],
   },
   {
-    title: "Auditing and Consulting Services",
+    title: "Consulting Services",
     points: [
-      "🛡️ Safety audits, risk assessments, and compliance reviews.  ",
-      "🏭 Advisory support for industrial sites and plant operations.",
-      "✅ Practical guidance for safer, audit-ready workplaces.",
-    ],
-  },
-  {
-    title: "Turn Key Projects",
-    points: [
-      "📋 End-to-end planning, sourcing, and installation support.",
-      "🛠️ Complete setup and handover for site-wide safety needs.",
-      "✅ Single-point execution from planning to completion.",
+      "Enterprise Risk Management.",
+      "ESG Audits and compliance including NGRBC / BRSR / RBA Requirements.",
+      "Different studies such as Electrical audits & Allied services.",
     ],
   },
 ];
@@ -162,21 +165,12 @@ export const serviceSections: ServiceSection[] = [
     ],
   },
   {
-    title: "Consulting for Safety",
-    description: "Risk studies, audits and plant-level safety advisory services.",
+    title: "Consulting Services",
+    description: "Enterprise risk management, ESG compliance and electrical audit support.",
     items: [
-      "Safety Audit as per IS 14489",
-      "Risk Assessment for the Site / High Risk Areas",
-      "HAZOP Study for Chemical Industries",
-      "SIL Study based on Risk Graph Method for Chemical Industries",
-      "Dust Explosion Assessment for FMCG Industries",
-      "Illumination, Ventilation, Noise Monitoring Survey for Industries",
-      "Fire Risk Assessment for the Plant",
-      "Fire Load Calculations for the Site",
-      "Testing of PRV's, Lifting Tools & Tackles (with Competent Person)",
-      "Electrical Safety Audits & Arc Flash Studies",
-      "Energy Audits",
-      "Environmental Social Governance Audits and Consulting",
+      "Enterprise Risk Management",
+      "ESG Audits and compliance including NGRBC / BRSR / RBA Requirements",
+      "Different studies such as Electrical audits & Allied services",
     ],
   },
   {
@@ -193,11 +187,10 @@ export const serviceSections: ServiceSection[] = [
     title: "Car Hire",
     description: "Flexible car hire support for business travel, site visits and employee movement.",
     items: [
-      "Local and outstation car hire",
-      "Site visit and client meeting travel",
-      "Employee pickup and drop support",
-      "Short-term and long-term rental options",
-      "Flexible scheduling for project requirements",
+      "Customized solutions for your trip with the safest commute",
+      "Special focus towards woman and child safety",
+      "Clean and hygienic vehicles",
+      "Highly trained and experienced chauffeurs",
     ],
   },
   {
